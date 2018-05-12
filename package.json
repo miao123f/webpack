@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config webpack.config.js --watch --hot",
-    "start": "webpack-dev-server --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --progress --colors --bail",
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack --progress --colors --watch",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base web/ --colors --open --hot"
   },
   "keywords": [],
   "author": "",
@@ -18,8 +18,11 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
@@ -29,7 +32,8 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-utf8-bom": "^1.1.3"
   },
   "dependencies": {
     "jquery": "^3.3.1",
